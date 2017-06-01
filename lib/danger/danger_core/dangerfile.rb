@@ -187,7 +187,7 @@ module Danger
           "you should turn off smart quotes in your editor of choice.".red
       end
 
-      if contents.include?("puts")
+      stubs(:puts) do |args|
         ui.puts "You used `puts` in your Dangerfile. To print out text to GitHub use `message` instead"
       end
 
